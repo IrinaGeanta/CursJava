@@ -16,25 +16,23 @@ radius*radius*Math.PI
  */
 
 public class Shape {
-// nu avem variabile la nivel de clasa in nici una dintre clase - tricky note :), avem doar variabile nestatice care apartin obiectelor
-    public int length;
-    public int width;
-    public double radius;
-
+// nu avem variabile la nivel de clasa in nici una dintre clase - tricky note :),
+// avem doar variabile nestatice care apartin obiectelor
+    //public int length;
+    //public int width;
+    //public double radius;
+//sau deloc :) for some reason nu credeam ca se poate sa faci constructori cu parametri pe care sa nu ii ai ca si fields..
     public Shape (int length){
-        this.length = length;
-        calculateSquareArea(this.length); // aici initial am pus length, pt ca este acelasi lucru, dar pare mai corect cu this.length (you tell me)
+        //this.length = length;
+        calculateSquareArea(length); // aici initial am pus length, pt ca este acelasi lucru, dar pare mai corect cu this.length (you tell me)
     }
 
     public Shape (int length, int width){
-        this.length = length;
-        this.width = width;
-        calculateRectangleArea(this.length,this.width);
+        calculateRectangleArea(length,width);
     }
 
     public Shape (double radius){
-        this.radius = radius;
-        System.out.println("The area of the circle is: " + this.radius*this.radius*Math.PI);
+        System.out.println("The area of the circle is: " + radius*radius*Math.PI);
     }
 
 // initial am creat metode ca in curs cu return type int. Dar dat fiind ca nu le foloseam nicaieri am revenit la void :)
