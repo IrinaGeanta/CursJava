@@ -16,6 +16,6 @@ printam
  */
 public class SimpleCalculator {
 
-    
+
 
 }
