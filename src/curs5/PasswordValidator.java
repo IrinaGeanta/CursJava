@@ -20,7 +20,7 @@ public class PasswordValidator {
     public void validatePasswordRules(){
         if (password.length() < 8){
 
-            password.
+
 
         }
     }
