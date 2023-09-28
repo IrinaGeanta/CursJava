@@ -2,9 +2,10 @@ package curs6;
 
 
 import java.util.Arrays;
+import java.util.stream.Collectors;
 
 public class FindIndexOfElement {
-    Integer[] numbers = {2,4,9,8,1,12,44,55};
+    int[] numbers = {2,4,9,8,1,12,44,55};
 
     public void rezolvareCuFor (int nr){
         for (int i=0; i<numbers.length; i++){
@@ -26,7 +27,10 @@ public class FindIndexOfElement {
             }
         }
         */
-        //System.out.println("Numarul: " + nr + " este pe pozitia: " + Arrays.asList(numbers).indexOf(nr));
+        System.out.println("Numarul: " + nr + " este pe pozitia: " + Arrays.stream(numbers)
+                .mapToObj(Integer::valueOf)
+                .collect(Collectors.toList()).indexOf(nr));
+
 
         System.out.println(Arrays.toString(numbers));
     }
