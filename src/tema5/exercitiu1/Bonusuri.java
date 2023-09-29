@@ -36,6 +36,7 @@ public class Bonusuri {
         valoareVanzari = scan.nextInt();
         System.out.println("Luna vanzarilor efectuate (1-12): ");
         lunaVanzarilorEfectuate = scan.nextInt();
+        scan.close();
     }
 
     public void calculateBonus(){
