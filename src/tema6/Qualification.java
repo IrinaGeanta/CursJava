@@ -10,15 +10,15 @@ public class Qualification extends Teacher {
         super.schedule = schedule;
     }
 
-    public boolean verify(Qualification qualification){
-        if ((qualification.experienceYears>3) && qualification.course.toUpperCase().equals("JAVA") && qualification.schedule.toUpperCase().equals("AFTERNOON")){
+    public boolean verify(){
+        if ((experienceYears>3) && course.toUpperCase().equals("JAVA") && schedule.toUpperCase().equals("AFTERNOON")){
             return true;
         }
         return false;
     }
 
-    public void printVerify(Qualification qualification){
-        if (verify(qualification)){
+    public void printVerify(){
+        if (verify()){
             System.out.println("You qualify to teach at this school!");
         } else {
             System.out.println("You do not qualify!");
