@@ -60,4 +60,26 @@ public class PropertiesFileProcessor {
             e.printStackTrace();
         }
     }
+    //delete from file
+    public void deleteFromPropertiesFile(String key){
+        Properties propFile = new Properties();
+
+        try (InputStream input = new FileInputStream("test.properties")){
+            propFile.load(input);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        try (OutputStream output = new FileOutputStream("test.properties");
+        ){
+
+            propFile.remove(key);
+            propFile.store(output, "Am salvat fisierul!");
+
+        }catch (IOException e){
+            e.printStackTrace();
+        }
+
+    }
 }

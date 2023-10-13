@@ -12,5 +12,10 @@ public class TestPropertiesFile {
         obj.readPropertiesFile("hostname");
         obj.updatePropertiesFile("hostname", "Google cloud");
         obj.readPropertiesFile("hostname");
+
+        System.out.println("-----------------------------");
+        obj.deleteFromPropertiesFile("hostname");
+        obj.readPropertiesFile("hostname");
+        obj.readPropertiesFile("email");
     }
 }
