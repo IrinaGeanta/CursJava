@@ -4,6 +4,11 @@ public class StringBuilderExample {
     public static void main(String[] args) {
         reverseString("masina");
         deleteFromString("masina", 0,2);
+        replaceFromString("Salut Bogdan", 6, 12,"Andra");
+        insertIntoString("Salut ", 6, "Irina");
+        appendToString("Salut ","George");
+        addSpacesToText("thisIsACamelCaseText");
+
     }
 
     public static void reverseString(String text){
@@ -18,5 +23,35 @@ public class StringBuilderExample {
         sb.delete(startIndex,endIndex);
         System.out.println(sb);
 
+    }
+
+    public static void replaceFromString(String text,int startIndex, int endIndex, String textToReplace){
+        StringBuilder sb = new StringBuilder(text);
+        sb.replace(startIndex,endIndex,textToReplace);
+        System.out.println(sb);
+    }
+
+    public static void insertIntoString(String text, int startIndex, String textToInsert){
+        StringBuilder sb = new StringBuilder(text);
+        sb.insert(startIndex, textToInsert);
+        System.out.println(sb);
+    }
+
+    public static void appendToString(String text, String textToAppend){
+        StringBuilder sb = new StringBuilder(text);
+        sb.append(textToAppend);
+        System.out.println(sb);
+    }
+
+    public static void addSpacesToText(String text){
+        StringBuilder sb = new StringBuilder(text);
+
+        for (int i =0; i< sb.length(); i++){
+            if (i !=0 && Character.isUpperCase(sb.charAt(i))){
+                sb.insert(i, " ");
+                i++;
+            }
+        }
+        System.out.println(sb);
     }
 }
