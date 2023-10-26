@@ -28,12 +28,14 @@ public class StringPlay {
             "Nulla elementum urna in dolor viverra, in efficitur lectus mattis.";
 
     public int countNulla(String txt){
-        String [] words = txt.split(" ");
-        System.out.println(words.length);
-        System.out.println(Arrays.toString(words));
+
+        // am facut minunea asta sa pot sa prind acel Nulla care era legat de punct si cuvantul de dinaintea lui..
+        // asa ca am replaced toate non alpha numeric cu space ca sa pot sa iau cuvant separat :) banui ca exista niste rezolvari mai elegante :))
+        String text = txt.replaceAll("[^a-zA-Z0-9]", " ");
+        String [] words = text.split(" ");
         int count = 0;
         for (String word : words){
-            if (word.trim().equals("Nulla") || (word.contains("Nulla") && word.contains(".")) || (word.contains("Nulla") && word.contains(","))){
+            if (word.trim().equals("Nulla")){
                 count++;
             }
         }
